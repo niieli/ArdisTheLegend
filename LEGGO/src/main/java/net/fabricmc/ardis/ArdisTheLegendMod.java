@@ -20,7 +20,7 @@ import java.util.List;
 
 public class ArdisTheLegendMod implements ModInitializer {
 	//TODO
-	//
+	// Ardis Food recipe/obtainable
 	// Ardisnius Ore
 	// Ardisimo Wood
 	// Ardis Rüstung & Tools
