@@ -20,6 +20,7 @@ import java.util.List;
 
 public class ArdisTheLegendMod implements ModInitializer {
 	//TODO
+	//
 	// Ardisnius Ore
 	// Ardisimo Wood
 	// Ardis Rüstung & Tools
@@ -31,12 +32,6 @@ public class ArdisTheLegendMod implements ModInitializer {
 	public static final ItemGroup ARDIS_THE_LEGEND = FabricItemGroupBuilder.build(
 			new Identifier("ardis-the-legend", "general"),
 			() -> new ItemStack(ArdisTheLegendMod.ARDIS_FOOD));
-
-	//public static final ItemGroup OTHER_GROUP = FabricItemGroupBuilder.create(
-	//				new Identifier("ardis-the-legend", "other")) //TESTZWECKE, falls noch mehr kommt.
-	//		.icon(() -> new ItemStack(Items.BOWL))
-	//		.build();
-	// ...
 
 	// an instance of our new item
 	public static final ArdisFood ARDIS_FOOD = new ArdisFood(new FabricItemSettings()
