@@ -1,6 +1,7 @@
 {
-  "item.ardis-the-legend.ardis_food": "Ardis",
+  "item.ardis-the-legend.ardis_food": "Ardis, aber essbar",
   "itemGroup.ardis-the-legend.general": "Ardis The Legend",
   "item.ardis-the-legend.ardis_food.tooltip_1": "Ardis ist sehr lecker, doch",
-  "item.ardis-the-legend.ardis_food.tooltip_2": "sollte nur in Notfällen genutzt werden."
+  "item.ardis-the-legend.ardis_food.tooltip_2": "sollte nur in Notfällen genutzt werden.",
+  "block.ardis-the-legend.ardisinius_ore": "Ardisinius Ore"
 }
