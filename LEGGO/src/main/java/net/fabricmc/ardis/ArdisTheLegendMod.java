@@ -19,19 +19,23 @@ import org.apache.logging.log4j.Logger;
 import java.util.List;
 
 public class ArdisTheLegendMod implements ModInitializer {
-	// This logger is used to write text to the console and the log file.
-	// It is considered best practice to use your mod id as the logger's name.
-	// That way, it's clear which mod wrote info, warnings, and errors.
+	//TODO
+	// Ardisnius Ore
+	// Ardisimo Wood
+	// Ardis Rüstung & Tools
+	//This logger is used to write text to the console and the log file.
+	//It is considered best practice to use your mod id as the logger's name.
+	//That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LogManager.getLogger("ardis-the-legend");
 
 	public static final ItemGroup ARDIS_THE_LEGEND = FabricItemGroupBuilder.build(
 			new Identifier("ardis-the-legend", "general"),
 			() -> new ItemStack(ArdisTheLegendMod.ARDIS_FOOD));
 
-	public static final ItemGroup OTHER_GROUP = FabricItemGroupBuilder.create(
-					new Identifier("ardis-the-legend", "other")) //TESTZWECKE, falls noch mehr kommt.
-			.icon(() -> new ItemStack(Items.BOWL))
-			.build();
+	//public static final ItemGroup OTHER_GROUP = FabricItemGroupBuilder.create(
+	//				new Identifier("ardis-the-legend", "other")) //TESTZWECKE, falls noch mehr kommt.
+	//		.icon(() -> new ItemStack(Items.BOWL))
+	//		.build();
 	// ...
 
 	// an instance of our new item
@@ -52,7 +56,7 @@ public class ArdisTheLegendMod implements ModInitializer {
 			// default white text
 			//tooltip.add( new TranslatableText("item.tutorial.fabric_item.tooltip") );
 
-			// formatted GOLD text
+			//formatted GOLD text
 			tooltip.add( new TranslatableText("item.ardis-the-legend.ardis_food.tooltip_1").formatted(Formatting.GOLD) );
 			tooltip.add( new TranslatableText("item.ardis-the-legend.ardis_food.tooltip_2").formatted(Formatting.GOLD) );
 		}
