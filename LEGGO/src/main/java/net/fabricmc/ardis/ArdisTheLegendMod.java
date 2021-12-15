@@ -23,6 +23,7 @@ import java.util.List;
 
 public class ArdisTheLegendMod implements ModInitializer {
 	//TODO bis Samstag
+	// Rezept:
 	// Ardis Food recipe/obtainable https://fabricmc.net/wiki/tutorial:recipes
 	// Ardisnius Ore generation + richtige Texturen https://fabricmc.net/wiki/tutorial:blocks https://fabricmc.net/wiki/tutorial:ores
 	// Ardisimo Wood https://fabricmc.net/wiki/tutorial:features https://fabricmc.net/wiki/tutorial:trees
