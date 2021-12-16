@@ -19,7 +19,7 @@ public class RainbowZombieClient implements ClientModInitializer {
          * Entity Renderers can also manipulate the model before it renders based on entity context (EndermanEntityRenderer#render).
          */
         // In 1.17, use EntityRendererRegistry.register (seen below) instead of EntityRendererRegistry.INSTANCE.register (seen above)
-        EntityRendererRegistry.register(EntityTesting.ZOMBIE, RainbowZombieRenderer::new);
+        EntityRendererRegistry.register(EntityTesting.RAINBOWZOMBIE, RainbowZombieRenderer::new);
 
         EntityModelLayerRegistry.registerModelLayer(MODEL_ZOMBIE_LAYER, RainbowZombieModel::getTexturedModelData);
     }

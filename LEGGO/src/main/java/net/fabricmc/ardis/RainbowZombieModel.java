@@ -10,12 +10,12 @@ import net.minecraft.client.util.math.MatrixStack;
 public class RainbowZombieModel extends EntityModel<RainbowZombie> {
     private final ModelPart base;
     public RainbowZombieModel(ModelPart modelPart) {
-        this.base = modelPart.getChild(EntityModelPartNames.CUBE);
+        this.base = modelPart.getChild(EntityModelPartNames.BODY);
     }
     public static TexturedModelData getTexturedModelData() {
         ModelData modelData = new ModelData();
         ModelPartData modelPartData = modelData.getRoot();
-        modelPartData.addChild(EntityModelPartNames.CUBE, ModelPartBuilder.create().uv(0, 0).cuboid(-6F, 12F, -6F, 12F, 12F, 12F), ModelTransform.pivot(0F, 0F, 0F));
+        modelPartData.addChild(EntityModelPartNames.BODY, ModelPartBuilder.create().uv(0, 0).cuboid(-6F, -10F, -6F, 12F, 33F, 12F), ModelTransform.pivot(0F, 0F, 0F));
         return TexturedModelData.of(modelData, 64, 64);
     }
 

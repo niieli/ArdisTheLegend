@@ -4,10 +4,15 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.entity.EntityDimensions;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.SpawnGroup;
+import net.minecraft.entity.mob.ZombieEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.sound.SoundEvents;
@@ -21,6 +26,8 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 
+import static net.fabricmc.ardis.ArdisTheLegendMod.ArdisFood.RAINBOW_ZOMBIE_SPAWN_EGG;
+
 public class ArdisTheLegendMod implements ModInitializer {
 	//TODO bis Samstag
 	// Rezept:
@@ -31,6 +38,9 @@ public class ArdisTheLegendMod implements ModInitializer {
 	//This logger is used to write text to the console and the log file.
 	//It is considered best practice to use your mod id as the logger's name.
 	//That way, it's clear which mod wrote info, warnings, and errors.
+	public static final String MODID = "ardis-the-legend";
+	public static final String ZOMBIE_NAME = "rainbowzombie";
+
 	public static final Logger LOGGER = LogManager.getLogger("ardis-the-legend");
 
 	public static final ItemGroup ARDIS_THE_LEGEND = FabricItemGroupBuilder.build(
@@ -65,6 +75,9 @@ public class ArdisTheLegendMod implements ModInitializer {
 			tooltip.add( new TranslatableText("item.ardis-the-legend.ardis_food.tooltip_1").formatted(Formatting.GOLD) );
 			tooltip.add( new TranslatableText("item.ardis-the-legend.ardis_food.tooltip_2").formatted(Formatting.GOLD) );
 		}
+		public static final Item RAINBOW_ZOMBIE_SPAWN_EGG = new SpawnEggItem(EntityTesting.RAINBOWZOMBIE, 15546167, 15435290, new FabricItemSettings()
+				.group(ArdisTheLegendMod.ARDIS_THE_LEGEND));
+
 	}
 	public static class ArdisiniusOre extends Block {
 		public ArdisiniusOre(Settings settings) {
@@ -85,7 +98,7 @@ public class ArdisTheLegendMod implements ModInitializer {
 		Registry.register(Registry.BLOCK, new Identifier("ardis-the-legend", "ardisinius_ore"), ARDISINIUS_ORE);
 		Registry.register(Registry.ITEM, new Identifier("ardis-the-legend", "ardisinius_ore"), new BlockItem(ARDISINIUS_ORE, new FabricItemSettings()
 				.group(ArdisTheLegendMod.ARDIS_THE_LEGEND)));
-
+		Registry.register(Registry.ITEM, new Identifier("ardis-the-legend", "rainbow_zombie_spawn_egg"), RAINBOW_ZOMBIE_SPAWN_EGG);
 
 		LOGGER.info("Hello, this is Ardis!");
 	}
