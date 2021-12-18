@@ -11,17 +11,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(DefaultBiomeFeatures.class)
 public abstract class ZombieModSpawnMixin {
-    @Inject(at = @At("TAIL"), method = "addFarmAnimals")
-    private static void addZombieModSpawns(SpawnSettings.Builder builder, CallbackInfo info) {
-        builder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityTesting.RAINBOWZOMBIE, 100, 1, 3));
-    }
-    @Inject(at = @At("TAIL"), method = "addPlainsMobs")
-    private static void addZombiePlainsSpawn(SpawnSettings.Builder builder, CallbackInfo info) {
-        builder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityTesting.RAINBOWZOMBIE, 100, 2, 5));
-    }
-
-    @Inject(at = @At("TAIL"), method = "addDesertMobs")
-    private static void addZombieDesertSpawn(SpawnSettings.Builder builder, CallbackInfo info) {
-        builder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityTesting.RAINBOWZOMBIE, 100, 2, 5));
+    @Inject(at = @At("TAIL"), method = "addMonsters")
+    private static void addRainbowZombie(SpawnSettings.Builder builder, int zombieWeight, int zombieVillagerWeight, int skeletonWeight, boolean drowned, CallbackInfo ci) {
+        builder.spawn(SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(EntityTesting.RAINBOWZOMBIE, 50, 1, 3));
     }
 }

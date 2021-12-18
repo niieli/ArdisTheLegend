@@ -3,11 +3,15 @@ package net.fabricmc.ardis;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
+import net.fabricmc.fabric.impl.object.builder.FabricEntityType;
+import net.fabricmc.fabric.mixin.object.builder.SpawnRestrictionAccessor;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
+import net.minecraft.entity.SpawnRestriction;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.Heightmap;
 
 public class EntityTesting implements ModInitializer {
 
@@ -22,6 +26,9 @@ public class EntityTesting implements ModInitializer {
             new Identifier("ardis-the-legend", "rainbowzombie"),
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, RainbowZombie::new).dimensions(EntityDimensions.fixed(0.75f, 2.05f)).build()
     );
+    static {
+        SpawnRestrictionAccessor.callRegister(RAINBOWZOMBIE, SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, ((type, world, spawnReason, pos, random) -> true));
+    }
     @Override
     public void onInitialize() {
         FabricDefaultAttributeRegistry.register(RAINBOWZOMBIE, RainbowZombie.DUDEAttributes());

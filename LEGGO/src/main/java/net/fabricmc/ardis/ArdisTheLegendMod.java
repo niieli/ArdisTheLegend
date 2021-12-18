@@ -4,25 +4,17 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.client.item.TooltipContext;
-import net.minecraft.entity.EntityDimensions;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.SpawnGroup;
-import net.minecraft.entity.mob.ZombieEntity;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.*;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import software.bernie.geckolib3.GeckoLib;
 
 import java.util.List;
 
@@ -39,7 +31,6 @@ public class ArdisTheLegendMod implements ModInitializer {
 	//It is considered best practice to use your mod id as the logger's name.
 	//That way, it's clear which mod wrote info, warnings, and errors.
 	public static final String MODID = "ardis-the-legend";
-	public static final String ZOMBIE_NAME = "rainbowzombie";
 
 	public static final Logger LOGGER = LogManager.getLogger("ardis-the-legend");
 
@@ -54,6 +45,15 @@ public class ArdisTheLegendMod implements ModInitializer {
 			.requiresTool());
 
 	// an instance of our new item
+	public static final RainbowDust RAINBOW_DUST = new RainbowDust(new FabricItemSettings()
+			.group(ArdisTheLegendMod.ARDIS_THE_LEGEND)
+			.rarity(Rarity.RARE)
+			.fireproof());
+	public static class RainbowDust extends Item {
+
+		public RainbowDust(Settings settings) { super(settings);}
+	}
+
 	public static final ArdisFood ARDIS_FOOD = new ArdisFood(new FabricItemSettings()
 			.group(ArdisTheLegendMod.ARDIS_THE_LEGEND)
 			.maxCount(8)
@@ -90,11 +90,13 @@ public class ArdisTheLegendMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		GeckoLib.initialize();
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
 		Registry.register(Registry.ITEM, new Identifier("ardis-the-legend", "ardis_food"), ARDIS_FOOD);
+		Registry.register(Registry.ITEM, new Identifier("ardis-the-legend", "rainbow_dust"), RAINBOW_DUST);
 		Registry.register(Registry.BLOCK, new Identifier("ardis-the-legend", "ardisinius_ore"), ARDISINIUS_ORE);
 		Registry.register(Registry.ITEM, new Identifier("ardis-the-legend", "ardisinius_ore"), new BlockItem(ARDISINIUS_ORE, new FabricItemSettings()
 				.group(ArdisTheLegendMod.ARDIS_THE_LEGEND)));

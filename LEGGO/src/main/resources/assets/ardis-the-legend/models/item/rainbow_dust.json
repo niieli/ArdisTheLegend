@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "ardis-the-legend:item/rainbow_dust",
+    "layer1": "ardis-the-legend:item/rainbow_dust"
+  }
+}
