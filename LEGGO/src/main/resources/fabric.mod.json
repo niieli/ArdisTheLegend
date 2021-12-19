@@ -19,16 +19,16 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.ardis.ArdisTheLegendMod",
-      "net.fabricmc.ardis.EntityTesting"
+      "net.nieli.ardis.ArdisTheLegendMod",
+      "net.nieli.ardis.EntityTesting"
     ],
     "client": [
-      "net.fabricmc.ardis.RainbowZombieClient"
+      "net.nieli.ardis.EntityClient"
     ]
   },
 
   "mixins": [
-    "modid.mixins.json"
+    "ardis.mixins.json"
   ],
 
   "depends": {

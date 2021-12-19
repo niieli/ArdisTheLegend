@@ -1,4 +1,4 @@
-package net.fabricmc.ardis;
+package net.nieli.ardis;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
@@ -18,7 +18,7 @@ import software.bernie.geckolib3.GeckoLib;
 
 import java.util.List;
 
-import static net.fabricmc.ardis.ArdisTheLegendMod.ArdisFood.RAINBOW_ZOMBIE_SPAWN_EGG;
+import static net.nieli.ardis.ArdisTheLegendMod.ArdisFood.RAINBOW_ZOMBIE_SPAWN_EGG;
 
 public class ArdisTheLegendMod implements ModInitializer {
 	//TODO bis Samstag

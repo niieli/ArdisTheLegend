@@ -1,4 +1,4 @@
-package net.fabricmc.ardis;
+package net.nieli.ardis;
 
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;

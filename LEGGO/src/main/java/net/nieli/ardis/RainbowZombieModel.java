@@ -1,4 +1,4 @@
-package net.fabricmc.ardis;
+package net.nieli.ardis;
 
 import com.google.common.collect.ImmutableList;
 import net.minecraft.client.model.*;

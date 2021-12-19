@@ -1,6 +1,6 @@
-package net.fabricmc.ardis.mixin;
+package net.nieli.ardis.mixin;
 
-import net.fabricmc.ardis.ArdisTheLegendMod;
+import net.nieli.ardis.ArdisTheLegendMod;
 import net.minecraft.client.gui.screen.TitleScreen;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

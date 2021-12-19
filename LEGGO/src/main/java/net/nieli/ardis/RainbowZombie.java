@@ -1,4 +1,4 @@
-package net.fabricmc.ardis;
+package net.nieli.ardis;
 
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
