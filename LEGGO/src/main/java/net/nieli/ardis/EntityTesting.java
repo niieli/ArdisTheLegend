@@ -11,6 +11,7 @@ import net.minecraft.entity.SpawnRestriction;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.Heightmap;
+import net.nieli.ardis.entities.ArdisArrowEntity;
 
 public class EntityTesting implements ModInitializer {
 
@@ -30,8 +31,9 @@ public class EntityTesting implements ModInitializer {
     public static final EntityType<RainbowZombie> RAINBOWZOMBIE = Registry.register(
             Registry.ENTITY_TYPE,
             new Identifier("ardis-the-legend", "rainbowzombie"),
-            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, RainbowZombie::new).dimensions(EntityDimensions.fixed(0.75f, 2.05f)).build()
+            FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, RainbowZombie::new).dimensions(EntityDimensions.fixed(0.75f, 2.05f)).build()
     );
+
     static {
         SpawnRestrictionAccessor.callRegister(RAINBOWZOMBIE, SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, ((type, world, spawnReason, pos, random) -> true));
     }

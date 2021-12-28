@@ -1,0 +1,6 @@
+{
+  "parent": "ardis-the-legend:item/ardis_bow",
+  "textures": {
+    "layer0": "ardis-the-legend:item/ardis_bow_pulling_2"
+  }
+}
