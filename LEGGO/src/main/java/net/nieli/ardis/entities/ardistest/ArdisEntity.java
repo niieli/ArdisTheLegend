@@ -27,7 +27,7 @@ public class ArdisEntity extends HostileEntity implements IAnimatable, IAnimatio
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event)
     {
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.ardisentity.vibing", true));
+        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.ardis.vibing", true));
         return PlayState.CONTINUE;
     }
 

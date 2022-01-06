@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.util.Identifier;
+import net.nieli.ardis.entities.ArdisArrowRenderer;
 import net.nieli.ardis.entities.rainbowzombie.RainbowZombieModel;
 import net.nieli.ardis.entities.rainbowzombie.RainbowZombieRenderer;
 import net.nieli.ardis.entities.ardistest.ArdisEntityRenderer;
@@ -18,7 +19,7 @@ public class EntityClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-
+        EntityRendererRegistry.register(EntityRegistry.ARDISARROW, ArdisArrowRenderer::new);
         EntityRendererRegistry.register(EntityRegistry.RAINBOWZOMBIE, RainbowZombieRenderer::new);
         EntityRendererRegistry.register(EntityRegistry.ARDISTEST, ArdisEntityRenderer::new);
 

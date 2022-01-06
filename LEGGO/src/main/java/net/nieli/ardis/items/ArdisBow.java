@@ -18,6 +18,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.UseAction;
 import net.minecraft.world.World;
+import net.nieli.ardis.entities.ArdisArrowEntity;
 import net.nieli.ardis.registry.ItemRegistry;
 
 import java.util.List;
@@ -48,9 +49,9 @@ public class ArdisBow extends BowItem {
                     boolean bl2 = bl && itemStack.isOf(ItemRegistry.ARDIS_ARROW_ITEM);
                     if (!world.isClient) {
                         ArdisArrowItem ardisArrowItem = (ArdisArrowItem) (itemStack.getItem() instanceof ArdisArrowItem ? itemStack.getItem() : ItemRegistry.ARDIS_ARROW_ITEM);
-                        PersistentProjectileEntity persistentProjectileEntity = ardisArrowItem.createArrow(world, itemStack, playerEntity);
-                        PersistentProjectileEntity persistentProjectileEntity2 = ardisArrowItem.createArrow(world, itemStack, playerEntity);
-                        PersistentProjectileEntity persistentProjectileEntity3 = ardisArrowItem.createArrow(world, itemStack, playerEntity);
+                        ArdisArrowEntity persistentProjectileEntity = (ArdisArrowEntity) ardisArrowItem.createArrow(world, itemStack, playerEntity);
+                        ArdisArrowEntity persistentProjectileEntity2 = (ArdisArrowEntity) ardisArrowItem.createArrow(world, itemStack, playerEntity);
+                        ArdisArrowEntity persistentProjectileEntity3 = (ArdisArrowEntity) ardisArrowItem.createArrow(world, itemStack, playerEntity);
                         persistentProjectileEntity.setVelocity(playerEntity, playerEntity.getPitch(), playerEntity.getYaw(), 0.0F, f * 5.0F, 1.0F);
                         persistentProjectileEntity2.setVelocity(playerEntity, playerEntity.getPitch(), playerEntity.getYaw(), 0.0F, f * 4.2F, 6.0F);
                         persistentProjectileEntity3.setVelocity(playerEntity, playerEntity.getPitch(), playerEntity.getYaw(), 0.0F, f * 4.2F, -4.0F);
@@ -71,18 +72,10 @@ public class ArdisBow extends BowItem {
                             persistentProjectileEntity.setPunch(k);
                         }
 
-                        if (EnchantmentHelper.getLevel(Enchantments.FLAME, stack) < 2) {
-                            persistentProjectileEntity.setOnFireFor(100);
-                            persistentProjectileEntity2.setOnFireFor(100);
-                            persistentProjectileEntity3.setOnFireFor(100);
-                        }
-
                         stack.damage(1, playerEntity, (p) -> p.sendToolBreakStatus(playerEntity.getActiveHand()));
-                        if (bl2 || playerEntity.getAbilities().creativeMode) {
-                            persistentProjectileEntity.pickupType = PersistentProjectileEntity.PickupPermission.CREATIVE_ONLY;
-                            persistentProjectileEntity2.pickupType = PersistentProjectileEntity.PickupPermission.CREATIVE_ONLY;
-                            persistentProjectileEntity3.pickupType = PersistentProjectileEntity.PickupPermission.CREATIVE_ONLY;
-                        }
+                        persistentProjectileEntity.pickupType = PersistentProjectileEntity.PickupPermission.CREATIVE_ONLY;
+                        persistentProjectileEntity2.pickupType = PersistentProjectileEntity.PickupPermission.CREATIVE_ONLY;
+                        persistentProjectileEntity3.pickupType = PersistentProjectileEntity.PickupPermission.CREATIVE_ONLY;
 
                         world.spawnEntity(persistentProjectileEntity);
                         world.spawnEntity(persistentProjectileEntity2);
@@ -91,7 +84,7 @@ public class ArdisBow extends BowItem {
 
                     world.playSound(null, playerEntity.getX(), playerEntity.getY(), playerEntity.getZ(), SoundEvents.ENTITY_ARROW_SHOOT, SoundCategory.PLAYERS, 1.0F, 1.0F / (world.getRandom().nextFloat() * 0.4F + 1.2F) + f * 0.5F);
                     if (!bl2 && !playerEntity.getAbilities().creativeMode) {
-                        itemStack.decrement(3);
+                        itemStack.decrement(1);
                         if (itemStack.isEmpty()) {
                             playerEntity.getInventory().removeOne(itemStack);
                         }
@@ -113,6 +106,8 @@ public class ArdisBow extends BowItem {
         return f;
     }
 
+
+
     public int getMaxUseTime(ItemStack stack) {
         return 72000;
     }
@@ -131,7 +126,6 @@ public class ArdisBow extends BowItem {
             return TypedActionResult.consume(itemStack);
         }
     }
-
     public Predicate<ItemStack> getProjectiles() {
         return BOW_PROJECTILES;
     }
@@ -140,6 +134,10 @@ public class ArdisBow extends BowItem {
         return 20;
     }
 
+    @Override
+    public boolean hasGlint(ItemStack stack) {
+        return false;
+    }
 }
 
 

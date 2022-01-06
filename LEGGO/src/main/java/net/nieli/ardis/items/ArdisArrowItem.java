@@ -13,8 +13,6 @@ public class ArdisArrowItem extends ArrowItem {
     }
 
     public PersistentProjectileEntity createArrow(World world, ItemStack stack, LivingEntity shooter) {
-            ArdisArrowEntity ardisArrowEntity = new ArdisArrowEntity(world, shooter);
-            ardisArrowEntity.initFromStack(stack);
-            return ardisArrowEntity;
+        return new ArdisArrowEntity(world, shooter);
     }
 }
