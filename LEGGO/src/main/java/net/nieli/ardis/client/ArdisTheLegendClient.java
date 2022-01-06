@@ -1,11 +1,11 @@
-package net.nieli.ardis;
+package net.nieli.ardis.client;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.object.builder.v1.client.model.FabricModelPredicateProviderRegistry;
 import net.minecraft.util.Identifier;
-import static net.nieli.ardis.ItemRegistry.ARDIS_BOW;
+import static net.nieli.ardis.registry.ItemRegistry.ARDIS_BOW;
 
 @Environment(EnvType.CLIENT)
 public class ArdisTheLegendClient implements ClientModInitializer {

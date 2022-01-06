@@ -1,4 +1,4 @@
-package net.nieli.ardis;
+package net.nieli.ardis.entities.rainbowzombie;
 
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;

@@ -11,7 +11,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
-import net.minecraft.tag.ItemTags;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
@@ -19,7 +18,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.UseAction;
 import net.minecraft.world.World;
-import net.nieli.ardis.ItemRegistry;
+import net.nieli.ardis.registry.ItemRegistry;
 
 import java.util.List;
 import java.util.function.Predicate;
@@ -53,8 +52,8 @@ public class ArdisBow extends BowItem {
                         PersistentProjectileEntity persistentProjectileEntity2 = ardisArrowItem.createArrow(world, itemStack, playerEntity);
                         PersistentProjectileEntity persistentProjectileEntity3 = ardisArrowItem.createArrow(world, itemStack, playerEntity);
                         persistentProjectileEntity.setVelocity(playerEntity, playerEntity.getPitch(), playerEntity.getYaw(), 0.0F, f * 5.0F, 1.0F);
-                        persistentProjectileEntity2.setVelocity(playerEntity, playerEntity.getPitch(), playerEntity.getYaw(), 5.0F, f * 4.2F, 3.0F);
-                        persistentProjectileEntity3.setVelocity(playerEntity, playerEntity.getPitch(), playerEntity.getYaw(), 5.0F, f * 4.2F, -2.0F);
+                        persistentProjectileEntity2.setVelocity(playerEntity, playerEntity.getPitch(), playerEntity.getYaw(), 0.0F, f * 4.2F, 6.0F);
+                        persistentProjectileEntity3.setVelocity(playerEntity, playerEntity.getPitch(), playerEntity.getYaw(), 0.0F, f * 4.2F, -4.0F);
                         if (f == 1.0F) {
                             persistentProjectileEntity3.setCritical(true);
                             persistentProjectileEntity2.setCritical(true);

@@ -1,10 +1,11 @@
-package net.nieli.ardis;
+package net.nieli.ardis.registry;
 
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
+import net.nieli.ardis.ArdisTheLegendMod;
 import net.nieli.ardis.items.*;
 
 public class ItemRegistry {

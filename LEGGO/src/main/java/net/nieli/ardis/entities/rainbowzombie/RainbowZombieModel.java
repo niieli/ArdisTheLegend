@@ -1,4 +1,4 @@
-package net.nieli.ardis;
+package net.nieli.ardis.entities.rainbowzombie;
 
 import com.google.common.collect.ImmutableList;
 import net.minecraft.client.model.*;

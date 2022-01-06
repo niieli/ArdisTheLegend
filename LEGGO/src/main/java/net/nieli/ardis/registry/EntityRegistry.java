@@ -1,4 +1,4 @@
-package net.nieli.ardis;
+package net.nieli.ardis.registry;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
@@ -11,9 +11,10 @@ import net.minecraft.entity.SpawnRestriction;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.Heightmap;
-import net.nieli.ardis.entities.ArdisArrowEntity;
+import net.nieli.ardis.entities.rainbowzombie.RainbowZombie;
+import net.nieli.ardis.entities.ardistest.ArdisEntity;
 
-public class EntityTesting implements ModInitializer {
+public class EntityRegistry implements ModInitializer {
 
     /*
      * Registers our Zombie Entity under the ID "ardis-the-legend:zombie".
@@ -24,7 +25,7 @@ public class EntityTesting implements ModInitializer {
     public static final EntityType<ArdisEntity> ARDISTEST = Registry.register(
             Registry.ENTITY_TYPE,
             new Identifier("ardis-the-legend", "ardistest"),
-            FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, ArdisEntity::new).dimensions(EntityDimensions.fixed(0.5f, 1.2f)).build());
+            FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, ArdisEntity::new).dimensions(EntityDimensions.fixed(0.6f, 1.8f)).build());
     static {
         SpawnRestrictionAccessor.callRegister(ARDISTEST, SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, ((type, world, spawnReason, pos, random) -> true));
     }
@@ -40,6 +41,6 @@ public class EntityTesting implements ModInitializer {
     @Override
     public void onInitialize() {
         FabricDefaultAttributeRegistry.register(RAINBOWZOMBIE, RainbowZombie.DUDEAttributes());
-        FabricDefaultAttributeRegistry.register(ARDISTEST, ArdisEntity.ArdisAttributes());
+        FabricDefaultAttributeRegistry.register(ARDISTEST, ArdisEntity.createHostileAttributes());
     }
 }

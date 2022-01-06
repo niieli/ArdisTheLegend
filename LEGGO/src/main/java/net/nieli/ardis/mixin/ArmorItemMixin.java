@@ -9,7 +9,7 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.Item;
-import net.nieli.ardis.ItemRegistry;
+import net.nieli.ardis.registry.ItemRegistry;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Mutable;

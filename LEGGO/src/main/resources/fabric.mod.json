@@ -19,12 +19,12 @@
   "entrypoints": {
     "main": [
       "net.nieli.ardis.ArdisTheLegendMod",
-      "net.nieli.ardis.EntityTesting",
+      "net.nieli.ardis.registry.EntityRegistry",
       "net.nieli.ardis.ArdisOreGeneration"
     ],
     "client": [
-      "net.nieli.ardis.EntityClient",
-      "net.nieli.ardis.ArdisTheLegendClient"
+      "net.nieli.ardis.client.EntityClient",
+      "net.nieli.ardis.client.ArdisTheLegendClient"
     ]
   },
 

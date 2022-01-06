@@ -1,35 +1,19 @@
 package net.nieli.ardis;
 
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
-import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.*;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.*;
-import net.minecraft.util.math.intprovider.ConstantIntProvider;
-import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.RegistryKey;
-import net.minecraft.world.Heightmap;
 import net.minecraft.world.World;
-import net.minecraft.world.gen.GenerationStep;
-import net.minecraft.world.gen.YOffset;
-import net.minecraft.world.gen.decorator.CountPlacementModifier;
-import net.minecraft.world.gen.decorator.HeightRangePlacementModifier;
-import net.minecraft.world.gen.decorator.SquarePlacementModifier;
-import net.minecraft.world.gen.feature.*;
-import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
-import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
-import net.minecraft.world.gen.stateprovider.BlockStateProvider;
-import net.minecraft.world.gen.stateprovider.SimpleBlockStateProvider;
-import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
+import net.nieli.ardis.registry.EntityRegistry;
+import net.nieli.ardis.registry.ItemRegistry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import software.bernie.geckolib3.GeckoLib;
@@ -98,7 +82,7 @@ public class ArdisTheLegendMod implements ModInitializer {
 			tooltip.add( new TranslatableText("item.ardis-the-legend.ardis_food.tooltip_1").formatted(Formatting.GOLD) );
 			tooltip.add( new TranslatableText("item.ardis-the-legend.ardis_food.tooltip_2").formatted(Formatting.GOLD) );
 		}
-		public static final Item RAINBOW_ZOMBIE_SPAWN_EGG = new SpawnEggItem(EntityTesting.RAINBOWZOMBIE, 15546167, 15435290, new FabricItemSettings()
+		public static final Item RAINBOW_ZOMBIE_SPAWN_EGG = new SpawnEggItem(EntityRegistry.RAINBOWZOMBIE, 15546167, 15435290, new FabricItemSettings()
 				.group(ArdisTheLegendMod.ARDIS_THE_LEGEND));
 
 	}

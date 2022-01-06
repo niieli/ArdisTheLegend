@@ -1,4 +1,4 @@
-package net.nieli.ardis;
+package net.nieli.ardis.entities.rainbowzombie;
 
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
