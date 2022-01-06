@@ -1,5 +1,6 @@
 package net.nieli.ardis.registry;
 
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
@@ -9,6 +10,9 @@ import net.nieli.ardis.ArdisTheLegendMod;
 import net.nieli.ardis.items.*;
 
 public class ItemRegistry {
+    public static final Item RAINBOW_ZOMBIE_SPAWN_EGG = new SpawnEggItem(EntityRegistry.RAINBOWZOMBIE, 15546167, 15435290, new FabricItemSettings().group(ArdisTheLegendMod.ARDIS_THE_LEGEND));
+    public static final RainbowDust RAINBOW_DUST = new RainbowDust(new FabricItemSettings().group(ArdisTheLegendMod.ARDIS_THE_LEGEND).rarity(Rarity.RARE).fireproof());
+    public static final ArdisFood ARDIS_FOOD = new ArdisFood(new FabricItemSettings().group(ArdisTheLegendMod.ARDIS_THE_LEGEND).maxCount(8).rarity(Rarity.EPIC).fireproof().food(FoodComponents.ENCHANTED_GOLDEN_APPLE));
     public static final ArdisArrowItem ARDIS_ARROW_ITEM = new ArdisArrowItem(new Item.Settings().group(ArdisTheLegendMod.ARDIS_THE_LEGEND));
     public static final ArdisBow ARDIS_BOW = new ArdisBow(new Item.Settings().group(ArdisTheLegendMod.ARDIS_THE_LEGEND).rarity(Rarity.EPIC));
     public static final ArmorMaterial ARDIS_MATERIAL = new ArdisArmorMaterial();
@@ -19,6 +23,9 @@ public class ItemRegistry {
     public static final ArdisSword ARDIS_SWORD = new ArdisSword(ArdisSwordMaterial.INSTANCE, 10, -2.7F, new Item.Settings().group(ArdisTheLegendMod.ARDIS_THE_LEGEND).rarity(Rarity.EPIC).fireproof());
 
     public static void init(){
+        Registry.register(Registry.ITEM, new Identifier("ardis-the-legend", "rainbow_zombie_spawn_egg"), RAINBOW_ZOMBIE_SPAWN_EGG);
+        Registry.register(Registry.ITEM, new Identifier("ardis-the-legend", "rainbow_dust"), RAINBOW_DUST);
+        Registry.register(Registry.ITEM, new Identifier("ardis-the-legend","ardis_food"),ARDIS_FOOD);
         Registry.register(Registry.ITEM, new Identifier("ardis-the-legend", "ardis_arrow"), ARDIS_ARROW_ITEM);
         Registry.register(Registry.ITEM, new Identifier("ardis-the-legend", "ardis_bow"), ARDIS_BOW);
         Registry.register(Registry.ITEM, new Identifier("ardis-the-legend", "ardis_sword"), ARDIS_SWORD);
