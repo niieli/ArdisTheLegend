@@ -1,5 +1,6 @@
 package net.nieli.ardis.items;
 
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
@@ -8,6 +9,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.item.BowItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
@@ -17,6 +19,7 @@ import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.UseAction;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.nieli.ardis.entities.ArdisArrowEntity;
 import net.nieli.ardis.registry.ItemRegistry;
@@ -62,7 +65,6 @@ public class ArdisBow extends BowItem {
                         }
 
                         int j = EnchantmentHelper.getLevel(Enchantments.POWER, stack);
-                        persistentProjectileEntity.setDamage(persistentProjectileEntity.getDamage() + 40);
                         if (j > 0) {
                             persistentProjectileEntity.setDamage(persistentProjectileEntity.getDamage() + (double)j * 1.5D + 1.5D);
                         }
@@ -70,6 +72,8 @@ public class ArdisBow extends BowItem {
                         int k = EnchantmentHelper.getLevel(Enchantments.PUNCH, stack);
                         if (k > 0) {
                             persistentProjectileEntity.setPunch(k);
+                            persistentProjectileEntity2.setPunch(k);
+                            persistentProjectileEntity3.setPunch(k);
                         }
 
                         stack.damage(1, playerEntity, (p) -> p.sendToolBreakStatus(playerEntity.getActiveHand()));
@@ -105,8 +109,6 @@ public class ArdisBow extends BowItem {
 
         return f;
     }
-
-
 
     public int getMaxUseTime(ItemStack stack) {
         return 72000;
