@@ -8,7 +8,7 @@
     "MobSpawnMixin"
   ],
   "client": [
-    "ExampleMixin"
+    "ArdisTheLegendMixin"
   ],
   "injectors": {
     "defaultRequire": 1
