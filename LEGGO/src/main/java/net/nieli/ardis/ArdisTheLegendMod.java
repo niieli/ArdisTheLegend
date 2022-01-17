@@ -16,7 +16,7 @@ import software.bernie.geckolib3.GeckoLib;
 
 
 public class ArdisTheLegendMod implements ModInitializer {
-	//TODO bis 28.12
+	//TODO
 	// Release 1.0.0
 	// BOSS(Ardis)
 	// ?Quest Book?
