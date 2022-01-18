@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " W ",
+    " W ",
+    " R "
+  ],
+  "key": {
+    "W": {
+      "item": "ardis-the-legend:rainbow_dust"
+    },
+    "R": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "ardis-the-legend:ardis_sword",
+    "count": 1
+  }
+}

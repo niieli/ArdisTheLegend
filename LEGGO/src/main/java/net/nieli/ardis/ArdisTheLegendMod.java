@@ -41,7 +41,7 @@ public class ArdisTheLegendMod implements ModInitializer {
 		GeckoLib.initialize();
 		ItemRegistry.init();
 		BlockRegistry.init();
-		HudRenderCallback.EVENT.register(new SpecialHUD());
+		//HudRenderCallback.EVENT.register(new SpecialHUD()); //Hud overlay
 		//Registry.register(Registry.PARTICLE_TYPE, new Identifier(ArdisTheLegendMod.MODID, "green_flame"), GREEN_FLAME);
 		Registry.register(Registry.PARTICLE_TYPE, new Identifier(ArdisTheLegendMod.MODID, "rainbow_flame"), RAINBOW_FLAME);
 		LOGGER.info("Hello, this is Ardis!");
