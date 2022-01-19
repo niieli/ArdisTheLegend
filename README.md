@@ -1,4 +1,4 @@
-# ardis-the-legend-fabricmcmod
+# Ardis The Legend
 A Minecraft mod about Ardis.
 Still a work in progress
 ETA: none.
