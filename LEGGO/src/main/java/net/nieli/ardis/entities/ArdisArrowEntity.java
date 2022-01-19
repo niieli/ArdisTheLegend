@@ -13,7 +13,7 @@ import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.world.World;
 import net.nieli.ardis.ArdisTheLegendMod;
 import net.nieli.ardis.registry.EntityRegistry;
-import net.nieli.ardis.registry.ItemRegistry;
+import net.nieli.ardis.registry.ItemsRegistry;
 
 public class ArdisArrowEntity extends PersistentProjectileEntity {
     public ArdisArrowEntity(EntityType<? extends PersistentProjectileEntity> entityType, World world) {
@@ -53,6 +53,6 @@ public class ArdisArrowEntity extends PersistentProjectileEntity {
 
     @Override
     protected ItemStack asItemStack() {
-        return new ItemStack(ItemRegistry.ARDIS_ARROW_ITEM);
+        return new ItemStack(ItemsRegistry.ARDIS_ARROW_ITEM);
     }
 }

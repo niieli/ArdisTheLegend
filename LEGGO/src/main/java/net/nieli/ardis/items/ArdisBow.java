@@ -1,6 +1,5 @@
 package net.nieli.ardis.items;
 
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
@@ -9,7 +8,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.item.BowItem;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
@@ -19,10 +17,9 @@ import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.UseAction;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.nieli.ardis.entities.ArdisArrowEntity;
-import net.nieli.ardis.registry.ItemRegistry;
+import net.nieli.ardis.registry.ItemsRegistry;
 
 import java.util.List;
 import java.util.function.Predicate;
@@ -31,7 +28,7 @@ public class ArdisBow extends BowItem {
     public ArdisBow(Settings settings) {
         super(settings);
     }
-    public static final Predicate<ItemStack> BOW_PROJECTILES = (stack) -> stack.isOf(ItemRegistry.ARDIS_ARROW_ITEM);
+    public static final Predicate<ItemStack> BOW_PROJECTILES = (stack) -> stack.isOf(ItemsRegistry.ARDIS_ARROW_ITEM);
 
     @Override
     public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
@@ -43,15 +40,15 @@ public class ArdisBow extends BowItem {
             ItemStack itemStack = playerEntity.getArrowType(stack);
             if (!itemStack.isEmpty() || bl) {
                 if (itemStack.isEmpty()) {
-                    itemStack = new ItemStack(ItemRegistry.ARDIS_ARROW_ITEM);
+                    itemStack = new ItemStack(ItemsRegistry.ARDIS_ARROW_ITEM);
                 }
 
                 int i = this.getMaxUseTime(stack) - remainingUseTicks;
                 float f = getPullProgress(i);
                 if (!((double)f < 0.1D)) {
-                    boolean bl2 = bl && itemStack.isOf(ItemRegistry.ARDIS_ARROW_ITEM);
+                    boolean bl2 = bl && itemStack.isOf(ItemsRegistry.ARDIS_ARROW_ITEM);
                     if (!world.isClient) {
-                        ArdisArrowItem ardisArrowItem = (ArdisArrowItem) (itemStack.getItem() instanceof ArdisArrowItem ? itemStack.getItem() : ItemRegistry.ARDIS_ARROW_ITEM);
+                        ArdisArrowItem ardisArrowItem = (ArdisArrowItem) (itemStack.getItem() instanceof ArdisArrowItem ? itemStack.getItem() : ItemsRegistry.ARDIS_ARROW_ITEM);
                         ArdisArrowEntity persistentProjectileEntity = (ArdisArrowEntity) ardisArrowItem.createArrow(world, itemStack, playerEntity);
                         ArdisArrowEntity persistentProjectileEntity2 = (ArdisArrowEntity) ardisArrowItem.createArrow(world, itemStack, playerEntity);
                         ArdisArrowEntity persistentProjectileEntity3 = (ArdisArrowEntity) ardisArrowItem.createArrow(world, itemStack, playerEntity);

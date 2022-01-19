@@ -14,7 +14,7 @@ import net.minecraft.world.gen.decorator.HeightRangePlacementModifier;
 import net.minecraft.world.gen.decorator.SquarePlacementModifier;
 import net.minecraft.world.gen.feature.*;
 
-import static net.nieli.ardis.registry.BlockRegistry.ARDISINIUS_ORE;
+import static net.nieli.ardis.registry.ItemsRegistry.ARDISINIUS_ORE;
 
 public class ArdisOreGeneration implements ModInitializer {
     private static ConfiguredFeature<?, ?> ARDISINIUS_ORE_PLACE = Feature.ORE

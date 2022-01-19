@@ -6,13 +6,12 @@ import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
 import net.fabricmc.fabric.api.object.builder.v1.client.model.FabricModelPredicateProviderRegistry;
-import net.minecraft.client.particle.FireworksSparkParticle;
 import net.minecraft.client.particle.FlameParticle;
 import net.minecraft.screen.PlayerScreenHandler;
 import net.minecraft.util.Identifier;
 import net.nieli.ardis.ArdisTheLegendMod;
 
-import static net.nieli.ardis.registry.ItemRegistry.ARDIS_BOW;
+import static net.nieli.ardis.registry.ItemsRegistry.ARDIS_BOW;
 
 @Environment(EnvType.CLIENT)
 public class ArdisTheLegendClient implements ClientModInitializer {
