@@ -47,7 +47,7 @@ public class ArdisHouse extends StructureFeature<StructurePoolFeatureConfig> {
 
         BlockState topBlock = columnOfBlocks.getState(landHeight);
 
-        return topBlock.getFluidState().isEmpty();
+        return topBlock.getFluidState().isEmpty(); //landHeight>100
     }
 
     public static Optional<StructurePiecesGenerator<StructurePoolFeatureConfig>> createPiecesGenerator(StructureGeneratorFactory.Context<StructurePoolFeatureConfig> context){
@@ -81,8 +81,8 @@ public class ArdisHouse extends StructureFeature<StructurePoolFeatureConfig> {
                         PoolStructurePiece::new,
                         blockPos,
                         false,
-                        false
-                );
+                        true
+                ); // important! ^^
         if(structurePiecesGenerator.isPresent()){
             ArdisTheLegendMod.LOGGER.log(Level.DEBUG,"Ardis House at " + blockPos);
         }
