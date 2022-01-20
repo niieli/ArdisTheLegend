@@ -4,12 +4,14 @@
   "version": "${version}",
 
   "name": "Ardis The Legend",
-  "description": "Die Legende von Ardis wird nun ins Licht gerückt!",
+  "description": "Ardis The Legend is the product when a meme mod gets serious... The time has come to reveal the secrets behind the legend Ardis.",
   "authors": [
-    "Nieli!"
+    "nieli",
+    "Ardisinius/Ardis"
   ],
   "contact": {
-    "sources": "https://github.com/niieli/ardis-the-legend-fabricmcmod"
+    "sources": "https://github.com/niieli/ardis-the-legend-fabricmcmod",
+    "issues": "https://github.com/niieli/ArdisTheLegend/issues"
   },
 
   "license": "MIT",
