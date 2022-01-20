@@ -1,12 +1,18 @@
 package net.nieli.ardis;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
 import net.minecraft.item.*;
 import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.util.*;
+import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.RegistryKey;
+import net.minecraft.world.biome.Biome;
+import net.nieli.ardis.registry.ArdisStructures;
 import net.nieli.ardis.registry.ItemsRegistry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -34,13 +40,34 @@ public class ArdisTheLegendMod implements ModInitializer {
 			() -> new ItemStack(ItemsRegistry.ARDIS_BOW));
 	//public static final DefaultParticleType GREEN_FLAME = FabricParticleTypes.simple();
 	public static final DefaultParticleType RAINBOW_FLAME = FabricParticleTypes.simple();
+
 	@Override
 	public void onInitialize() {
 		GeckoLib.initialize();
 		ItemsRegistry.init();
+		ArdisStructures.setupAndRegisterStructureFeatures();
+		StructureConfiguredStructures.registerConfiguredStructures();
+		addStructureSpawningToDimensionsAndBiomes();
 		//HudRenderCallback.EVENT.register(new SpecialHUD()); //Hud overlay
 		//Registry.register(Registry.PARTICLE_TYPE, new Identifier(ArdisTheLegendMod.MODID, "green_flame"), GREEN_FLAME);
 		Registry.register(Registry.PARTICLE_TYPE, new Identifier(ArdisTheLegendMod.MODID, "rainbow_flame"), RAINBOW_FLAME);
 		LOGGER.info("Hello, this is Ardis!");
+	}
+
+	public static void addStructureSpawningToDimensionsAndBiomes() {
+		BiomeModifications.addStructure(
+				BiomeSelectors.categories(
+						Biome.Category.DESERT,
+						Biome.Category.EXTREME_HILLS,
+						Biome.Category.FOREST,
+						Biome.Category.ICY,
+						Biome.Category.JUNGLE,
+						Biome.Category.PLAINS,
+						Biome.Category.SAVANNA,
+						Biome.Category.TAIGA),
+				RegistryKey.of(
+						Registry.CONFIGURED_STRUCTURE_FEATURE_KEY,
+						BuiltinRegistries.CONFIGURED_STRUCTURE_FEATURE.getId(StructureConfiguredStructures.CONFIGURED_ARDIS_HOUSE))
+		);
 	}
 }
