@@ -19,7 +19,7 @@ public class SleepyTimeEffect extends StatusEffect {
     public void applyUpdateEffect(LivingEntity entity, int amplifier){
         BlockPos blockPos = entity.getBlockPos();
         if(entity instanceof PlayerEntity) {
-            ((PlayerEntity) entity).sleep(blockPos);
+            ((PlayerEntity) entity).sleep(blockPos); //Final feature -> Change screen to dark and make player unable to move
         }
     }
 }

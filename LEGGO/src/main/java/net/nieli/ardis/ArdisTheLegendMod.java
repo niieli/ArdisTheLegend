@@ -76,5 +76,19 @@ public class ArdisTheLegendMod implements ModInitializer {
 						Registry.CONFIGURED_STRUCTURE_FEATURE_KEY,
 						BuiltinRegistries.CONFIGURED_STRUCTURE_FEATURE.getId(StructureConfiguredStructures.CONFIGURED_ARDIS_HOUSE))
 		);
+		BiomeModifications.addStructure(
+				BiomeSelectors.categories(
+						Biome.Category.DESERT,
+						Biome.Category.EXTREME_HILLS,
+						Biome.Category.FOREST,
+						Biome.Category.ICY,
+						Biome.Category.JUNGLE,
+						Biome.Category.PLAINS,
+						Biome.Category.SAVANNA,
+						Biome.Category.TAIGA),
+				RegistryKey.of(
+						Registry.CONFIGURED_STRUCTURE_FEATURE_KEY,
+						BuiltinRegistries.CONFIGURED_STRUCTURE_FEATURE.getId(StructureConfiguredStructures.CONFIGURED_ARDIS_HOUSEB))
+		);
 	}
 }
