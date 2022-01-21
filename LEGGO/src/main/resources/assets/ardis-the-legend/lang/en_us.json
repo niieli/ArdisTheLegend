@@ -10,5 +10,6 @@
   "item.ardis-the-legend.ardis_sword.tooltip": "Die Legende Ardis!",
   "item.ardis-the-legend.ardis_arrow": "Ardis Arrow",
   "item.ardis-the-legend.ardis_bow": "Ardis Bow",
-  "item.ardis-the-legend.ardis_bow.tooltip": "Die Legende!"
+  "item.ardis-the-legend.ardis_bow.tooltip": "Die Legende!",
+  "effect.ardis-the-legend.sleepy": "Sleep..."
 }

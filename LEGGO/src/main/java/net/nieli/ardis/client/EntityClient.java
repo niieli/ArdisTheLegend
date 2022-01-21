@@ -10,6 +10,7 @@ import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.util.Identifier;
 import net.nieli.ardis.entities.ArdisArrowEntity;
 import net.nieli.ardis.entities.ArdisArrowRenderer;
+import net.nieli.ardis.entities.ardistestv0.ArdisEntityV0Renderer;
 import net.nieli.ardis.entities.rainbowzombie.RainbowZombieModel;
 import net.nieli.ardis.entities.rainbowzombie.RainbowZombieRenderer;
 import net.nieli.ardis.entities.ardistest.ArdisEntityRenderer;
@@ -24,6 +25,7 @@ public class EntityClient implements ClientModInitializer {
         EntityRendererRegistry.register(EntityRegistry.ARDISARROW, ArdisArrowRenderer::new);
         EntityRendererRegistry.register(EntityRegistry.RAINBOWZOMBIE, RainbowZombieRenderer::new);
         EntityRendererRegistry.register(EntityRegistry.ARDISTEST, ArdisEntityRenderer::new);
+        EntityRendererRegistry.register(EntityRegistry.ARDISV0, ArdisEntityV0Renderer::new);
 
         EntityModelLayerRegistry.registerModelLayer(MODEL_ZOMBIE_LAYER, RainbowZombieModel::getTexturedModelData);
     }

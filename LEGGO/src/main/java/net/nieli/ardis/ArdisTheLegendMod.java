@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
+import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.item.*;
 import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.util.*;
@@ -41,16 +42,22 @@ public class ArdisTheLegendMod implements ModInitializer {
 	//public static final DefaultParticleType GREEN_FLAME = FabricParticleTypes.simple();
 	public static final DefaultParticleType RAINBOW_FLAME = FabricParticleTypes.simple();
 
+	public static final StatusEffect SLEEPY = new SleepyTimeEffect();
+
 	@Override
 	public void onInitialize() {
 		GeckoLib.initialize();
 		ItemsRegistry.init();
+		//Structures
 		ArdisStructures.setupAndRegisterStructureFeatures();
 		StructureConfiguredStructures.registerConfiguredStructures();
 		addStructureSpawningToDimensionsAndBiomes();
 		//HudRenderCallback.EVENT.register(new SpecialHUD()); //Hud overlay
+		//particles
 		//Registry.register(Registry.PARTICLE_TYPE, new Identifier(ArdisTheLegendMod.MODID, "green_flame"), GREEN_FLAME);
 		Registry.register(Registry.PARTICLE_TYPE, new Identifier(ArdisTheLegendMod.MODID, "rainbow_flame"), RAINBOW_FLAME);
+		//Status effects
+		Registry.register(Registry.STATUS_EFFECT, new Identifier(ArdisTheLegendMod.MODID,"sleepy"), SLEEPY);
 		LOGGER.info("Hello, this is Ardis!");
 	}
 
