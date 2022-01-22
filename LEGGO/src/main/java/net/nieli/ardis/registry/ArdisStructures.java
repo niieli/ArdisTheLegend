@@ -19,8 +19,8 @@ public class ArdisStructures {
         FabricStructureBuilder.create(new Identifier(ArdisTheLegendMod.MODID,"ardis_house"), ARDIS_HOUSE)
                 .step(GenerationStep.Feature.SURFACE_STRUCTURES)
                 .defaultConfig(new StructureConfig(
-                        1370,
-                        1320,
+                        1000,
+                        900,
                         234563263))
                 .adjustsSurface()
                 .register();
@@ -28,9 +28,9 @@ public class ArdisStructures {
         FabricStructureBuilder.create(new Identifier(ArdisTheLegendMod.MODID,"ardis_houseb"), ARDIS_HOUSEB)
                 .step(GenerationStep.Feature.SURFACE_STRUCTURES)
                 .defaultConfig(new StructureConfig(
-                        1640,
-                        1570,
-                        2130941755))
+                        1060,
+                        920,
+                        327462343))
                 .adjustsSurface()
                 .register();
     }
