@@ -1,11 +1,20 @@
 {
-  "name": "repurposed_structures:ardis_house/start_pool",
+  "name": "ardis-the-legend:ardis_house/start_pool",
   "fallback": "minecraft:empty",
   "elements": [
     {
-      "weight": 1,
+      "weight": 10,
       "element": {
         "location": "ardis-the-legend:ardishouse",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "ardis-the-legend:ardishouseb2",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"

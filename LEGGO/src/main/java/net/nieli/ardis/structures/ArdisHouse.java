@@ -28,16 +28,6 @@ public class ArdisHouse extends StructureFeature<StructurePoolFeatureConfig> {
         super(codec, ArdisHouse::createPiecesGenerator, PostPlacementProcessor.EMPTY);
     }
 
-    public static final Pool<SpawnSettings.SpawnEntry> STRUCTURE_MONSTERS = Pool.of(
-            new SpawnSettings.SpawnEntry(EntityType.ILLUSIONER, 100, 4, 9),
-            new SpawnSettings.SpawnEntry(EntityType.VINDICATOR, 100, 4, 9)
-    );
-
-    public static final Pool<SpawnSettings.SpawnEntry> STRUCTURE_CREATURES = Pool.of(
-            new SpawnSettings.SpawnEntry(EntityType.SHEEP, 30, 10, 15),
-            new SpawnSettings.SpawnEntry(EntityType.RABBIT, 100, 1, 2)
-    );
-
     public static boolean isFeatureChunk(StructureGeneratorFactory.Context<StructurePoolFeatureConfig> context){
         BlockPos spawnXZPosition = context.chunkPos().getCenterAtY(0);
 
