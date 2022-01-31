@@ -15,9 +15,11 @@ import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.biome.Biome;
 import net.nieli.ardis.registry.ArdisStructures;
 import net.nieli.ardis.registry.ItemsRegistry;
+import net.nieli.ardis.worldgen.biomes.ArdisBiomeProvider;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import software.bernie.geckolib3.GeckoLib;
+import terrablender.api.BiomeProviders;
 
 
 public class ArdisTheLegendMod implements ModInitializer {

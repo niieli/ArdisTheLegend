@@ -27,6 +27,9 @@
     "client": [
       "net.nieli.ardis.client.EntityClient",
       "net.nieli.ardis.client.ArdisTheLegendClient"
+    ],
+    "terrablender": [
+      "net.nieli.ardis.worldgen.biomes.BiomeRegistry"
     ]
   },
 

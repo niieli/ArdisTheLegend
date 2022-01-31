@@ -7,8 +7,8 @@ import net.minecraft.world.gen.chunk.StructureConfig;
 import net.minecraft.world.gen.feature.StructureFeature;
 import net.minecraft.world.gen.feature.StructurePoolFeatureConfig;
 import net.nieli.ardis.ArdisTheLegendMod;
-import net.nieli.ardis.structures.ArdisHouse;
-import net.nieli.ardis.structures.ArdisHouseB;
+import net.nieli.ardis.worldgen.structures.ArdisHouse;
+import net.nieli.ardis.worldgen.structures.ArdisHouseB;
 
 public class ArdisStructures {
 
