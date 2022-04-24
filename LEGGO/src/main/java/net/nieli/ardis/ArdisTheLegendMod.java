@@ -1,38 +1,21 @@
 package net.nieli.ardis;
 
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
-import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
-import net.minecraft.block.Blocks;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.item.*;
 import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.util.*;
-import net.minecraft.util.math.intprovider.ConstantIntProvider;
-import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.RegistryKey;
-import net.minecraft.world.Heightmap;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.gen.feature.ConfiguredFeature;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.TreeFeatureConfig;
-import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
-import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
-import net.minecraft.world.gen.stateprovider.SimpleBlockStateProvider;
-import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
-import net.nieli.ardis.registry.ArdisStructures;
 import net.nieli.ardis.registry.ItemsRegistry;
-import net.nieli.ardis.worldgen.biomes.ArdisBiomeProvider;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import software.bernie.geckolib3.GeckoLib;
-import terrablender.api.BiomeProviders;
+import terrablender.api.TerraBlenderApi;
 
 
-public class ArdisTheLegendMod implements ModInitializer {
+public class ArdisTheLegendMod implements ModInitializer, TerraBlenderApi {
 	//TODO
 	// Release 1.0.0
 	// BOSS(Ardis)
@@ -60,10 +43,6 @@ public class ArdisTheLegendMod implements ModInitializer {
 	public void onInitialize() {
 		GeckoLib.initialize();
 		ItemsRegistry.init();
-		//Structures
-		ArdisStructures.setupAndRegisterStructureFeatures();
-		StructureConfiguredStructures.registerConfiguredStructures();
-		addStructureSpawningToDimensionsAndBiomes();
 		//HudRenderCallback.EVENT.register(new SpecialHUD()); //Hud overlay
 		//particles
 		//Registry.register(Registry.PARTICLE_TYPE, new Identifier(ArdisTheLegendMod.MODID, "green_flame"), GREEN_FLAME);
@@ -71,36 +50,5 @@ public class ArdisTheLegendMod implements ModInitializer {
 		//Status effects
 		Registry.register(Registry.STATUS_EFFECT, new Identifier(ArdisTheLegendMod.MODID,"sleepy"), SLEEPY);
 		LOGGER.info("Hello, this is Ardis!");
-	}
-
-	public static void addStructureSpawningToDimensionsAndBiomes() {
-		BiomeModifications.addStructure(
-				BiomeSelectors.categories(
-						Biome.Category.DESERT,
-						Biome.Category.EXTREME_HILLS,
-						Biome.Category.FOREST,
-						Biome.Category.ICY,
-						Biome.Category.JUNGLE,
-						Biome.Category.PLAINS,
-						Biome.Category.SAVANNA,
-						Biome.Category.TAIGA),
-				RegistryKey.of(
-						Registry.CONFIGURED_STRUCTURE_FEATURE_KEY,
-						BuiltinRegistries.CONFIGURED_STRUCTURE_FEATURE.getId(StructureConfiguredStructures.CONFIGURED_ARDIS_HOUSE))
-		);
-		BiomeModifications.addStructure(
-				BiomeSelectors.categories(
-						Biome.Category.DESERT,
-						Biome.Category.EXTREME_HILLS,
-						Biome.Category.FOREST,
-						Biome.Category.ICY,
-						Biome.Category.JUNGLE,
-						Biome.Category.PLAINS,
-						Biome.Category.SAVANNA,
-						Biome.Category.TAIGA),
-				RegistryKey.of(
-						Registry.CONFIGURED_STRUCTURE_FEATURE_KEY,
-						BuiltinRegistries.CONFIGURED_STRUCTURE_FEATURE.getId(StructureConfiguredStructures.CONFIGURED_ARDIS_HOUSEB))
-		);
 	}
 }

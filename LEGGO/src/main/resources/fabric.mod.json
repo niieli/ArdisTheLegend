@@ -38,8 +38,8 @@
   ],
 
   "depends": {
-    "geckolib3": ">=3.0.23",
-    "fabricloader": ">=0.12.12",
+    "geckolib3": ">=3.0.38",
+    "fabricloader": ">=0.13.3",
     "fabric": "*",
     "minecraft": "1.18.x",
     "java": ">=17"
