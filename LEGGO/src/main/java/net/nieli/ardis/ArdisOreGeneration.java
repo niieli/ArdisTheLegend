@@ -20,7 +20,7 @@ import java.util.Arrays;
 import static net.nieli.ardis.registry.ItemsRegistry.ARDISINIUS_ORE;
 
 public class ArdisOreGeneration implements ModInitializer {
-    private static ConfiguredFeature<?, ?> ARDISINIUS_ORE_CONFIGURED = new ConfiguredFeature
+    private static final ConfiguredFeature<?, ?> ARDISINIUS_ORE_CONFIGURED = new ConfiguredFeature<>
             (Feature.ORE, new OreFeatureConfig(
                     OreConfiguredFeatures.STONE_ORE_REPLACEABLES,
                     ARDISINIUS_ORE.getDefaultState(),

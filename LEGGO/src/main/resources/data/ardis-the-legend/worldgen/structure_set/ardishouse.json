@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "ardis-the-legend:ardishouse",
+      "weight": 10
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 30,
+    "separation": 26,
+    "salt": 1223983556
+  }
+}
