@@ -12,10 +12,9 @@ import net.nieli.ardis.registry.ItemsRegistry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import software.bernie.geckolib3.GeckoLib;
-import terrablender.api.TerraBlenderApi;
 
 
-public class ArdisTheLegendMod implements ModInitializer, TerraBlenderApi {
+public class ArdisTheLegendMod implements ModInitializer {
 	//TODO
 	// Release 1.0.0
 	// BOSS(Ardis)

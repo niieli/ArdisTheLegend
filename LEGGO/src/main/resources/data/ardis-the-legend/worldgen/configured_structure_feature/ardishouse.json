@@ -4,7 +4,7 @@
     "start_pool": "ardis-the-legend:ardishouse",
     "size": 1
   },
-  "biomes": "#minecraft:has_structure/mineshaft",
+  "biomes": "minecraft:frozen_peaks",
   "adapt_noise": true,
   "spawn_overrides": {}
 }
