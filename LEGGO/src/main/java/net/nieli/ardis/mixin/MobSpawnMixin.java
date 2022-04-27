@@ -13,6 +13,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class MobSpawnMixin {
     @Inject(at = @At("TAIL"), method = "addMonsters")
     private static void addRainbowZombie(SpawnSettings.Builder builder, int zombieWeight, int zombieVillagerWeight, int skeletonWeight, boolean drowned, CallbackInfo ci) {
-        builder.spawn(SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(EntityRegistry.RAINBOWZOMBIE, 50, 1, 3));
+        builder.spawn(SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(EntityRegistry.RAINBOWZOMBIE, 39, 1, 3));
     }
 }
